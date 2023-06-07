@@ -47,7 +47,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ModelQuest.cs" />
-    <Compile Include="PrimerAR.cs" />
+    <Compile Include="CustomerAR.cs" />
     <Compile Include="PrimerDAOForQuest.cs" />
     <Compile Include="Tests\Test1\Test1Vopros4.cs">
       <SubType>Form</SubType>
