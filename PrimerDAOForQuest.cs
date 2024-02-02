@@ -11,7 +11,6 @@ namespace Diplom
         static void PrimerDAOForQuests(string[] args)
         {
             IQuestionDAO questionDAO = new QuestionDAO();
-
             // Создание нового вопроса
             Question newQuestion = new Question
             {
@@ -20,7 +19,6 @@ namespace Diplom
                 CorrectAnswer = "Улучшение эффективности и производительности программы."
             };
             questionDAO.AddQuestion(newQuestion);
-
             // Получение вопроса по идентификатору и вывод информации
             Question retrievedQuestion = questionDAO.GetQuestionById(1);
             Console.WriteLine("Вопрос: " + retrievedQuestion.Text);
@@ -30,13 +28,11 @@ namespace Diplom
                 Console.WriteLine("- " + option);
             }
             Console.WriteLine("Правильный ответ: " + retrievedQuestion.CorrectAnswer);
-
             // Обновление информации о вопросе
             retrievedQuestion.Text = "Каким образом компилятор отличается от интерпретатора?";
             retrievedQuestion.Options = new List<string> { " Компилятор преобразует исходный код в машинный код, а интерпретатор выполняет код построчно.", "Компилятор выполняет код построчно, а интерпретатор преобразует исходный код в машинный код. ", "Компилятор работает с исходным кодом на языке программирования, а интерпретатор работает с машинным кодом." , "Компилятор и интерпретатор выполняют одни и те же операции, но в разном порядке." };
             retrievedQuestion.CorrectAnswer = "Компилятор преобразует исходный код в машинный код, а интерпретатор выполняет код построчно.";
             questionDAO.UpdateQuestion(retrievedQuestion);
-
             // Удаление вопроса
             questionDAO.DeleteQuestion(1);
         }
