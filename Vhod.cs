@@ -12,7 +12,7 @@ namespace Diplom
 {
     public partial class Vhod : Form
     {
-        MainForm mainForm = new MainForm();
+        
         public Vhod()
         {
             InitializeComponent();
@@ -25,8 +25,14 @@ namespace Diplom
 
         private void button1_Click(object sender, EventArgs e)
         {
+            MainForm mainForm = new MainForm();
             mainForm.Show();
             this.Visible = false;
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

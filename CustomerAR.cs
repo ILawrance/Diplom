@@ -10,7 +10,7 @@ namespace Diplom
     
         using System.Data;
         using System.Data.SqlClient;
-        public class Customer
+        public class CustomerAR
         {
             private const string CONNECTION_STRING =
                 "Data Source=(local);Initial Catalog=DesignPatterns;Integrated Security=True";
@@ -19,7 +19,7 @@ namespace Diplom
             public string Name { get; set; }
             public bool IsPremiumMember { get; set; }
 
-            public Customer(int id, string name, bool isPremiumMember)
+            public CustomerAR(int id, string name, bool isPremiumMember)
             {
                 ID = id;
                 Name = name;
@@ -32,7 +32,7 @@ namespace Diplom
             //
             //    Customer.GetByID(123);
             //
-            public static Customer GetByID(int id)
+            public static CustomerAR GetByID(int id)
             {
                 using (SqlConnection connection = new SqlConnection(CONNECTION_STRING))
                 {
@@ -53,7 +53,7 @@ namespace Diplom
                             string name = (string)reader["Name"];
                             bool isPremiumMember = (bool)reader["IsPremiumMember"];
 
-                            return new Customer(id, name, isPremiumMember);
+                            return new CustomerAR(id, name, isPremiumMember);
                         }
                     }
                 }
